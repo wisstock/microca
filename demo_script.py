@@ -37,23 +37,68 @@ if not os.path.exists(output_path):
 # PARAMETERS
 # dataset dependent parameters
 fr = 1                      # imaging rate in frames per second
-decay_time = 5              # length of a typical transient in seconds (see source/Getting_Started.rst)
+decay_time = 3              # length of a typical transient in seconds (see source/Getting_Started.rst)
+
+# # motion correction parameters
+# strides = (80, 80)          # start a new patch for pw-rigid motion correction every x pixels
+# overlaps = (20, 20)         # overlap between pathes (size of patch strides+overlaps)
+# max_shifts = (10, 10)       # maximum allowed rigid shifts (in pixels)
+# max_deviation_rigid = 3     # maximum shifts deviation allowed for patch with respect to rigid shifts
+# pw_rigid = True             # flag for performing non-rigid motion correction
+
+# # parameters for source extraction and deconvolution
+# p = 2                       # order of the autoregressive system
+# gnb = 3                     # number of global background components
+# merge_thr = 0.5             # merging threshold, max correlation allowed
+# rf =  200                   # half-size of the patches in pixels. e.g., if rf=25, patches are 50x50
+# stride_cnmf = 100           # amount of overlap between the patches in pixels
+# K = 50                      # number of components per patch
+# method_init = 'greedy_roi'  # initialization method (if analyzing dendritic data using 'sparse_nmf')
+# ssub = 2                    # spatial subsampling during initialization
+# tsub = 2                    # temporal subsampling during intialization
+
+# opts_dict = {'fnames': ca_path,
+#             'fr': fr,
+#             'decay_time': decay_time,
+#             'strides': strides,
+#             'overlaps': overlaps,
+#             'max_shifts': max_shifts,
+#             'max_deviation_rigid': max_deviation_rigid,
+#             'pw_rigid': pw_rigid,
+#             'p': p,
+#             'nb': gnb,
+#             'rf': rf,
+#             'K': K, 
+#             'stride': stride_cnmf,
+#             'method_init': method_init,
+#             'rolling_sum': True,
+#             'only_init': True,
+#             'ssub': ssub,
+#             'tsub': tsub,
+#             'merge_thr': merge_thr}
+
+# opts = params.CNMFParams(params_dict=opts_dict)
+
+
+# dataset dependent parameters
+fr = 1                             # imaging rate in frames per second
+decay_time = 5                     # length of a typical transient in seconds (see source/Getting_Started.rst)
 
 # motion correction parameters
-strides = (80, 80)          # start a new patch for pw-rigid motion correction every x pixels
-overlaps = (20, 20)         # overlap between pathes (size of patch strides+overlaps)
-max_shifts = (10, 10)       # maximum allowed rigid shifts (in pixels)
+strides = (48, 48)          # start a new patch for pw-rigid motion correction every x pixels
+overlaps = (24, 24)         # overlap between pathes (size of patch strides+overlaps)
+max_shifts = (6, 6)         # maximum allowed rigid shifts (in pixels)
 max_deviation_rigid = 3     # maximum shifts deviation allowed for patch with respect to rigid shifts
 pw_rigid = True             # flag for performing non-rigid motion correction
 
 # parameters for source extraction and deconvolution
-p = 2                       # order of the autoregressive system
-gnb = 3                     # number of global background components
-merge_thr = 0.5            # merging threshold, max correlation allowed
-rf =  300                   # half-size of the patches in pixels. e.g., if rf=25, patches are 50x50
-stride_cnmf = 100           # amount of overlap between the patches in pixels
-K = 20                      # number of components per patch
-method_init = 'greedy_roi'  # initialization method (if analyzing dendritic data using 'sparse_nmf')
+p = 0                       # order of the autoregressive system
+gnb = 2                     # number of global background components
+merge_thr = 0.75            # merging threshold, max correlation allowed
+rf =  None                  # half-size of the patches in pixels. e.g., if rf=25, patches are 50x50
+stride_cnmf = None          # amount of overlap between the patches in pixels
+K = 60                      # number of components per patch
+method_init = 'graph_nmf'   # initialization method (if analyzing dendritic data using 'sparse_nmf')
 ssub = 1                    # spatial subsampling during initialization
 tsub = 1                    # temporal subsampling during intialization
 
