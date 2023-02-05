@@ -2,5 +2,4 @@
 *.csv
 
 /demo_data
-/results
-/a
+/output
