@@ -2,4 +2,5 @@
 *.csv
 
 /demo_data
+/ctrl_data
 /output
