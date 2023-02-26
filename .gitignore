@@ -1,7 +1,8 @@
 *.avi
 *.csv
 
-/demo_data
-/ctrl_data
+/data_demo
 /output
 /shit_stat
+/data_micro
+/data_neuro
