@@ -1,0 +1,10 @@
+*.avi
+*.csv
+
+.ipynb_checkpoints
+/.aa_shit
+/output
+/shit_stat
+
+/data_neuro
+/data_glia
