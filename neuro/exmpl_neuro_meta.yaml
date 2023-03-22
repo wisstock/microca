@@ -1,0 +1,24 @@
+# Example of metadata for pre-/postsynaptic calcium activity 2p registrations with DRS stimulations
+#
+# Metadata file name format (file should be placed in the registration folder):
+# /samp_name/_meta.yaml 
+#
+#  Reg_time: total registration time, s (float)
+#   Event: event num (int)
+#   Type: stim type (str)
+#   Freq: stim frequency, Hz (float)
+#   Duration: stim duration, s (float)
+#   Time: stim start time, ms (float)
+
+Reg_time: 10.0
+Events:
+  - Event: 1
+    Type: A
+    Freq: 1.0
+    Duration: 1.0
+    Time: 2000.0
+  - Event: 2
+    Type: B
+    Freq: 10.0
+    Duration: 2.0
+    Time: 5000.0

@@ -1,0 +1,19 @@
+# Example of metadata for microglial calcium activity 2p registrations with bath-applications
+#
+# Metadata file name format (file should be placed in the registration folder):
+# /samp_name/_meta.yaml 
+#
+#  Reg_time: total registration time, s (float)
+#  Events:
+#   Event: event num (int)
+#   Type: application type (str)
+#   Time: application start time, ms (float)
+
+Reg_time: 10.0
+Events:
+  - Event: 1
+    Type: A
+    Time: 2000.0
+  - Event: 2
+    Type: B
+    Time: 6000.0
