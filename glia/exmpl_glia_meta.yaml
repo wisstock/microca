@@ -8,7 +8,14 @@
 #   Event: event num (int)
 #   Type: application type (str)
 #   Time: application start time, ms (float)
-
+#  Peaks_det:
+#   Bad_prof: bad spatial components list, created by hands
+#   Min_dist_sec: minimasl distance btwn peaks, sec (int)
+#   Width_sec: min and max peak duration, sec (list on int [min, max])
+#   Wlen_sec: length for prominence calc, sec (int)
+#   Heigh_min_proc: minimal absolute peak height, percent of maximal profile amplitude (float)
+#   Prom_min_proc: Heigh_min_proc: minimal peak prominence, percent of profile max-min value (float)
+г
 Reg_time: 10.0
 Events:
   - Event: 1
@@ -17,3 +24,10 @@ Events:
   - Event: 2
     Type: B
     Time: 6000.0
+Peaks_det:  # parameters for peak_det notebook only
+  Bad_prof: []
+  Min_dist_sec: 15
+  Width_sec: [1, 200]
+  Wlen_sec: 180
+  Heigh_min_proc: 0.05
+  Prom_min_proc: 0.1
